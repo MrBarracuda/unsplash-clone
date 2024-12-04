@@ -2,14 +2,9 @@ import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+import {ClerkProvider} from '@clerk/nextjs'
 import {dark} from "@clerk/themes";
+import styles from "@/app/index.module.css";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -28,7 +23,10 @@ export default function RootLayout({
     >
       <html lang="en" suppressHydrationWarning>
       <body className={GeistSans.className}>
-      {children}</body>
+      <main className={styles.main}>
+        {children}
+      </main>
+      </body>
       </html>
     </ClerkProvider>
 

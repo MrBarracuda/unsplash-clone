@@ -1,9 +1,9 @@
-import styles from "@/app/index.module.css";
+import styles from "./index.module.css"
 
-import {getRandomPhotos} from "@/app/db/data";
 import Link from "next/link";
 import Image from "next/image";
 import {type Random} from "unsplash-js/src/methods/photos/types";
+import {getRandomPhotos} from "@/db/data";
 
 export async function PhotosList({query = ""}) {
   const photos = await getRandomPhotos(30, query);

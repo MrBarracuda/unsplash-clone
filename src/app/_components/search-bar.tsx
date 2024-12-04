@@ -1,9 +1,11 @@
 "use client";
 
+import styles from "./index.module.css"
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/nextjs";
-import { dark } from '@clerk/themes'
+import Link from "next/link";
 
 
 export function Navbar({ query }: { query: string }) {
@@ -23,6 +25,7 @@ export function Navbar({ query }: { query: string }) {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
+      <Link href="/collection" className={styles.link}>Collection</Link>
       <SignedOut>
         <SignInButton />
       </SignedOut>

@@ -16,13 +16,14 @@ export default async function Photo({
   }
 
   return (
-    <div className={styles.main}>
+    <div className={styles.container}>
       <Image src={photo.response?.urls.full} alt="img" width={700} height={700} />
       <div>
         <ul style={{listStyle: "none", fontSize: "1.4rem", fontWeight: "lighter"}}>
           <li style={{marginBottom: "1rem"}}>Author: {photo.response.user.bio}</li>
           <li>Description: {photo.response.description}</li>
         </ul>
+        <button style={{marginTop: "1rem"}}>save</button>
       </div>
     </div>
   );
