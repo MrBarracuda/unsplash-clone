@@ -2,8 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/nextjs";
+import { dark } from '@clerk/themes'
 
-export function SearchBar({ query }: { query: string }) {
+
+export function Navbar({ query }: { query: string }) {
   const [input, setInput] = useState(query);
   const router = useRouter();
 
@@ -20,6 +23,12 @@ export function SearchBar({ query }: { query: string }) {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </div>
   );
 }

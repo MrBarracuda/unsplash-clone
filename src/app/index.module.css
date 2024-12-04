@@ -49,13 +49,19 @@
 }
 
 .list {
-  margin-top: 2rem;
+  /*margin-top: 1rem;*/
   columns: 270px;
 }
 
-@media (min-width: 640px) {
+/*@media (min-width: 640px) {*/
+/*  .container {*/
+/*    max-width: 640px;*/
+/*  }*/
+/*}*/
+
+@media (min-width: 375px) {
   .container {
-    max-width: 640px;
+    max-width: 375px;
   }
 }
 
@@ -71,15 +77,9 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
+    max-width: 1440px;
   }
 }
 
