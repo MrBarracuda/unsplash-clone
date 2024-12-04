@@ -1,12 +1,11 @@
 "use client";
 
-import styles from "../index.module.css"
+import styles from "../index.module.css";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-
 
 export function Navbar({ query }: { query: string }) {
   const [input, setInput] = useState(query);
@@ -17,7 +16,7 @@ export function Navbar({ query }: { query: string }) {
   };
 
   return (
-    <div style={{position: "absolute", top: 10, display: "flex", gap: "0.5rem"}}>
+    <div className={styles.navbar}>
       <input
         type="text"
         value={input}
@@ -25,7 +24,9 @@ export function Navbar({ query }: { query: string }) {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
-      <Link href="/collection" className={styles.link}>Collection</Link>
+      <Link href="/collection" className={styles.link}>
+        Collection
+      </Link>
       <SignedOut>
         <SignInButton />
       </SignedOut>

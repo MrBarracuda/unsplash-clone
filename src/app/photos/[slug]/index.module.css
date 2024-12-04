@@ -7,3 +7,12 @@
   gap: 3rem;
   padding: 4rem 1rem;
 }
+
+.photo_text {
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
