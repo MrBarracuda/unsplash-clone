@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 
 import {api} from "@/lib/utils";
 import Image from "next/image";
+import {SavePhoto} from "@/app/photos/[slug]/save-photo";
 
 export default async function Photo({
                                 params,
@@ -23,9 +24,11 @@ export default async function Photo({
           <li style={{marginBottom: "1rem"}}>Author: {photo.response.user.bio}</li>
           <li>Description: {photo.response.description}</li>
         </ul>
-        <button style={{marginTop: "1rem"}}>save</button>
+        <SavePhoto id={photo.response.id} url={photo.response.urls.full} />
       </div>
     </div>
   );
 }
+
+
 
